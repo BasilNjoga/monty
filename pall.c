@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-#include "list.h"
+#include "monty.h"
 
 /**
  * pall - this function prints all the elements in the stack

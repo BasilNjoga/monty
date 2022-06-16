@@ -13,11 +13,11 @@
 
 stack_t *head;
 
-void pushstack(stack_t **stack, unsigned int line_number __attribute__ ((unused)))
+void pushstack(stack_t **stack, int line_number)
 {
     stack_t *new_node;
     new_node = (stack_t *) malloc(sizeof(stack_t));
-    new_node->n = argv[1];
+    new_node->n = line_number;
 	new_node->prev = 0;
     new_node->next = 0;
     if (*stack == 0)
@@ -26,7 +26,7 @@ void pushstack(stack_t **stack, unsigned int line_number __attribute__ ((unused)
     }
     else
     {
-    *stack->prev = new_node; 
+    (*stack)->prev = new_node; 
     new_node->next = *stack;
     *stack = new_node;  
 	return(0);

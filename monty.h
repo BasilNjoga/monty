@@ -32,7 +32,7 @@ typedef struct instruction_s
 } instruction_t;
 
 stack_t *head;
-void push(int n)
+void pushstack(int n)
 {
     stack_t *new_node;
     new_node = (stack_t *) malloc(sizeof(stack_t));
@@ -51,7 +51,7 @@ void push(int n)
     }
 }
 
-void pall()
+void pallstack()
 {
     stack_t *temp;
     temp = head;
