@@ -31,5 +31,35 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void insertstack(int n);
+stack_t *head;
+void push(int n)
+{
+    stack_t *new_node;
+    new_node = (stack_t *) malloc(sizeof(stack_t));
+    new_node->n = n; 
+    new_node->prev = 0;
+    new_node->next = 0;
+    if (head == 0)
+    {
+        head = new_node;
+    }
+    else
+    {
+    head->prev = new_node; 
+    new_node->next = head;
+    head = new_node;  
+    }
+}
+
+void pall()
+{
+    stack_t *temp;
+    temp = head;
+    while (temp != NULL)
+    {
+        printf("%d\n", temp->n);
+        temp = temp->next;
+    }
+}
+
 #endif
