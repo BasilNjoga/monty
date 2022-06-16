@@ -14,7 +14,7 @@ void deletenode(stack_t **stack)
     stack_t *temp;
     if (*stack == 0)
     {
-        printf("list is empty");
+        push_erro(18);
     }
     else
     {
