@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include "monty.h"
 
 /**
@@ -10,8 +7,6 @@
  *
  * Return: nothing
  */
-
-stack_t *head;
 
 void pushstack(stack_t **stack, int line_number)
 {
@@ -29,6 +24,5 @@ void pushstack(stack_t **stack, int line_number)
     (*stack)->prev = new_node; 
     new_node->next = *stack;
     *stack = new_node;  
-	return(0);
     }
 }

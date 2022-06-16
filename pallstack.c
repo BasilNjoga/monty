@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 #include "monty.h"
 
 /**
@@ -9,14 +6,13 @@
  * Return: nothing
  */
 
-void pallstack()
+void pallstack(stack_t **stack)
 {
     stack_t *temp;
-    temp = head;
+    temp = *stack;
     while (temp != NULL)
     {
         printf("%d", temp->n);
         temp = temp->next;
     }
-	return(0);
 }

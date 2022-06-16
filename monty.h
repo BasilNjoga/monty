@@ -1,6 +1,11 @@
 #ifndef __MAIN_H__
 #define __MAIN_H__
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -31,35 +36,8 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-stack_t *head;
-void pushstack(int n)
-{
-    stack_t *new_node;
-    new_node = (stack_t *) malloc(sizeof(stack_t));
-    new_node->n = n; 
-    new_node->prev = 0;
-    new_node->next = 0;
-    if (head == 0)
-    {
-        head = new_node;
-    }
-    else
-    {
-    head->prev = new_node; 
-    new_node->next = head;
-    head = new_node;  
-    }
-}
-
-void pallstack()
-{
-    stack_t *temp;
-    temp = head;
-    while (temp != NULL)
-    {
-        printf("%d\n", temp->n);
-        temp = temp->next;
-    }
-}
+void pushstack(stack_t **stack, int line_number);
+void pallstack(stack_t **stack);
+void deletenode(stack_t **stack);
 
 #endif
